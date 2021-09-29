@@ -1,0 +1,1264 @@
+
+R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # Second R code on the HPC
+> 
+> # Install Tidyverse
+> install.packages("tidyverse", lib = "~/R/library")
+also installing the dependencies ‘colorspace’, ‘bit’, ‘rematch’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’, ‘bit64’, ‘tinytex’, ‘jquerylib’, ‘backports’, ‘generics’, ‘assertthat’, ‘blob’, ‘DBI’, ‘tidyselect’, ‘data.table’, ‘gargle’, ‘cellranger’, ‘ids’, ‘gtable’, ‘isoband’, ‘scales’, ‘cpp11’, ‘vroom’, ‘tzdb’, ‘progress’, ‘rmarkdown’, ‘selectr’, ‘broom’, ‘dbplyr’, ‘dplyr’, ‘dtplyr’, ‘forcats’, ‘googledrive’, ‘googlesheets4’, ‘ggplot2’, ‘haven’, ‘hms’, ‘lubridate’, ‘modelr’, ‘readr’, ‘readxl’, ‘reprex’, ‘rvest’, ‘tidyr’
+
+trying URL 'https://cloud.r-project.org/src/contrib/colorspace_2.0-2.tar.gz'
+Content type 'application/x-gzip' length 2196563 bytes (2.1 MB)
+==================================================
+downloaded 2.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/bit_4.0.4.tar.gz'
+Content type 'application/x-gzip' length 279723 bytes (273 KB)
+==================================================
+downloaded 273 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rematch_1.0.1.tar.gz'
+Content type 'application/x-gzip' length 3719 bytes
+==================================================
+downloaded 3719 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/farver_2.1.0.tar.gz'
+Content type 'application/x-gzip' length 1281864 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/labeling_0.4.2.tar.gz'
+Content type 'application/x-gzip' length 10156 bytes
+==================================================
+downloaded 10156 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/munsell_0.5.0.tar.gz'
+Content type 'application/x-gzip' length 182653 bytes (178 KB)
+==================================================
+downloaded 178 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/RColorBrewer_1.1-2.tar.gz'
+Content type 'application/x-gzip' length 11532 bytes (11 KB)
+==================================================
+downloaded 11 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/viridisLite_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 1267080 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/bit64_4.0.5.tar.gz'
+Content type 'application/x-gzip' length 135091 bytes (131 KB)
+==================================================
+downloaded 131 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/tinytex_0.34.tar.gz'
+Content type 'application/x-gzip' length 30196 bytes (29 KB)
+==================================================
+downloaded 29 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/jquerylib_0.1.4.tar.gz'
+Content type 'application/x-gzip' length 520207 bytes (508 KB)
+==================================================
+downloaded 508 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/backports_1.2.1.tar.gz'
+Content type 'application/x-gzip' length 21184 bytes (20 KB)
+==================================================
+downloaded 20 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/generics_0.1.0.tar.gz'
+Content type 'application/x-gzip' length 117834 bytes (115 KB)
+==================================================
+downloaded 115 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/assertthat_0.2.1.tar.gz'
+Content type 'application/x-gzip' length 12742 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/blob_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 10194 bytes
+==================================================
+downloaded 10194 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/DBI_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 743802 bytes (726 KB)
+==================================================
+downloaded 726 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/tidyselect_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 92088 bytes (89 KB)
+==================================================
+downloaded 89 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/data.table_1.14.2.tar.gz'
+Content type 'application/x-gzip' length 5301817 bytes (5.1 MB)
+==================================================
+downloaded 5.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gargle_1.2.0.tar.gz'
+Content type 'application/x-gzip' length 313418 bytes (306 KB)
+==================================================
+downloaded 306 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/cellranger_1.1.0.tar.gz'
+Content type 'application/x-gzip' length 63857 bytes (62 KB)
+==================================================
+downloaded 62 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/ids_1.0.1.tar.gz'
+Content type 'application/x-gzip' length 91213 bytes (89 KB)
+==================================================
+downloaded 89 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gtable_0.3.0.tar.gz'
+Content type 'application/x-gzip' length 368081 bytes (359 KB)
+==================================================
+downloaded 359 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/isoband_0.2.5.tar.gz'
+Content type 'application/x-gzip' length 1671911 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/scales_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 515201 bytes (503 KB)
+==================================================
+downloaded 503 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/cpp11_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 317563 bytes (310 KB)
+==================================================
+downloaded 310 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/vroom_1.5.5.tar.gz'
+Content type 'application/x-gzip' length 722973 bytes (706 KB)
+==================================================
+downloaded 706 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/tzdb_0.1.2.tar.gz'
+Content type 'application/x-gzip' length 550301 bytes (537 KB)
+==================================================
+downloaded 537 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/progress_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 29506 bytes (28 KB)
+==================================================
+downloaded 28 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rmarkdown_2.11.tar.gz'
+Content type 'application/x-gzip' length 3212367 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/selectr_0.4-2.tar.gz'
+Content type 'application/x-gzip' length 41371 bytes (40 KB)
+==================================================
+downloaded 40 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/broom_0.7.9.tar.gz'
+Content type 'application/x-gzip' length 631606 bytes (616 KB)
+==================================================
+downloaded 616 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/dbplyr_2.1.1.tar.gz'
+Content type 'application/x-gzip' length 581845 bytes (568 KB)
+==================================================
+downloaded 568 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/dplyr_1.0.7.tar.gz'
+Content type 'application/x-gzip' length 852103 bytes (832 KB)
+==================================================
+downloaded 832 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/dtplyr_1.1.0.tar.gz'
+Content type 'application/x-gzip' length 111895 bytes (109 KB)
+==================================================
+downloaded 109 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/forcats_0.5.1.tar.gz'
+Content type 'application/x-gzip' length 258301 bytes (252 KB)
+==================================================
+downloaded 252 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/googledrive_2.0.0.tar.gz'
+Content type 'application/x-gzip' length 1593656 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/googlesheets4_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 222038 bytes (216 KB)
+==================================================
+downloaded 216 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/ggplot2_3.3.5.tar.gz'
+Content type 'application/x-gzip' length 3063309 bytes (2.9 MB)
+==================================================
+downloaded 2.9 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/haven_2.4.3.tar.gz'
+Content type 'application/x-gzip' length 296805 bytes (289 KB)
+==================================================
+downloaded 289 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/hms_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 43117 bytes (42 KB)
+==================================================
+downloaded 42 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/lubridate_1.7.10.tar.gz'
+Content type 'application/x-gzip' length 473547 bytes (462 KB)
+==================================================
+downloaded 462 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/modelr_0.1.8.tar.gz'
+Content type 'application/x-gzip' length 121333 bytes (118 KB)
+==================================================
+downloaded 118 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/readr_2.0.2.tar.gz'
+Content type 'application/x-gzip' length 519060 bytes (506 KB)
+==================================================
+downloaded 506 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/readxl_1.3.1.tar.gz'
+Content type 'application/x-gzip' length 2056165 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/reprex_2.0.1.tar.gz'
+Content type 'application/x-gzip' length 1087338 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rvest_1.0.1.tar.gz'
+Content type 'application/x-gzip' length 94307 bytes (92 KB)
+==================================================
+downloaded 92 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/tidyr_1.1.4.tar.gz'
+Content type 'application/x-gzip' length 709082 bytes (692 KB)
+==================================================
+downloaded 692 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/tidyverse_1.3.1.tar.gz'
+Content type 'application/x-gzip' length 702779 bytes (686 KB)
+==================================================
+downloaded 686 KB
+
+* installing *source* package ‘colorspace’ ...
+** package ‘colorspace’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c colorspace.c -o colorspace.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.c -o init.o
+gcc -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o colorspace.so colorspace.o init.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-colorspace/00new/colorspace/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (colorspace)
+* installing *source* package ‘bit’ ...
+** package ‘bit’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c attrutil.c -o attrutil.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c bit.c -o bit.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c chunkutil.c -o chunkutil.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c clone.c -o clone.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.c -o init.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c integerutil.c -o integerutil.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c merge.c -o merge.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c rle.c -o rle.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c sort.c -o sort.o
+gcc -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o bit.so attrutil.o bit.o chunkutil.o clone.o init.o integerutil.o merge.o rle.o sort.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-bit/00new/bit/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (bit)
+* installing *source* package ‘rematch’ ...
+** package ‘rematch’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rematch)
+* installing *source* package ‘farver’ ...
+** package ‘farver’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c ColorSpace.cpp -o ColorSpace.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Comparison.cpp -o Comparison.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Conversion.cpp -o Conversion.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c encode.cpp -o encode.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c farver.cpp -o farver.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.cpp -o init.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o farver.so ColorSpace.o Comparison.o Conversion.o encode.o farver.o init.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-farver/00new/farver/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (farver)
+* installing *source* package ‘labeling’ ...
+** package ‘labeling’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (labeling)
+* installing *source* package ‘RColorBrewer’ ...
+** package ‘RColorBrewer’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (RColorBrewer)
+* installing *source* package ‘viridisLite’ ...
+** package ‘viridisLite’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (viridisLite)
+* installing *source* package ‘tinytex’ ...
+** package ‘tinytex’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tinytex)
+* installing *source* package ‘jquerylib’ ...
+** package ‘jquerylib’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (jquerylib)
+* installing *source* package ‘backports’ ...
+** package ‘backports’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c dotsElt.c -o dotsElt.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c dotsLength.c -o dotsLength.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.c -o init.o
+gcc -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o backports.so dotsElt.o dotsLength.o init.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-backports/00new/backports/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (backports)
+* installing *source* package ‘generics’ ...
+** package ‘generics’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (generics)
+* installing *source* package ‘assertthat’ ...
+** package ‘assertthat’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (assertthat)
+* installing *source* package ‘blob’ ...
+** package ‘blob’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (blob)
+* installing *source* package ‘DBI’ ...
+** package ‘DBI’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (DBI)
+* installing *source* package ‘tidyselect’ ...
+** package ‘tidyselect’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tidyselect)
+* installing *source* package ‘data.table’ ...
+** package ‘data.table’ successfully unpacked and MD5 sums checked
+** using staged installation
+gcc 8.3.0
+zlib 1.2.7 is available ok
+R CMD SHLIB supports OpenMP without any extra hint
+** libs
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c assign.c -o assign.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c between.c -o between.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c bmerge.c -o bmerge.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c chmatch.c -o chmatch.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c cj.c -o cj.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c coalesce.c -o coalesce.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c dogroups.c -o dogroups.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fastmean.c -o fastmean.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fcast.c -o fcast.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fifelse.c -o fifelse.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fmelt.c -o fmelt.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c forder.c -o forder.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c frank.c -o frank.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fread.c -o fread.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c freadR.c -o freadR.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c froll.c -o froll.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c frollR.c -o frollR.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c frolladaptive.c -o frolladaptive.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fsort.c -o fsort.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fwrite.c -o fwrite.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c fwriteR.c -o fwriteR.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c gsumm.c -o gsumm.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c ijoin.c -o ijoin.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c init.c -o init.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c inrange.c -o inrange.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c nafill.c -o nafill.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c nqrecreateindices.c -o nqrecreateindices.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c openmp-utils.c -o openmp-utils.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c quickselect.c -o quickselect.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c rbindlist.c -o rbindlist.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c reorder.c -o reorder.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c shift.c -o shift.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c snprintf.c -o snprintf.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c subset.c -o subset.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c transpose.c -o transpose.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c types.c -o types.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c uniqlist.c -o uniqlist.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c utils.c -o utils.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c vecseq.c -o vecseq.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fopenmp  -fpic  -g -O2  -c wrappers.c -o wrappers.o
+gcc -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o data.table.so assign.o between.o bmerge.o chmatch.o cj.o coalesce.o dogroups.o fastmean.o fcast.o fifelse.o fmelt.o forder.o frank.o fread.o freadR.o froll.o frollR.o frolladaptive.o fsort.o fwrite.o fwriteR.o gsumm.o ijoin.o init.o inrange.o nafill.o nqrecreateindices.o openmp-utils.o quickselect.o rbindlist.o reorder.o shift.o snprintf.o subset.o transpose.o types.o uniqlist.o utils.o vecseq.o wrappers.o -fopenmp -lz -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+PKG_CFLAGS = -fopenmp
+PKG_LIBS = -fopenmp -lz
+if [ "data.table.so" != "datatable.so" ]; then mv data.table.so datatable.so; fi
+if [ "" != "Windows_NT" ] && [ `uname -s` = 'Darwin' ]; then install_name_tool -id datatable.so datatable.so; fi
+installing to /home/u4/dwdetzi/R/library/00LOCK-data.table/00new/data.table/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (data.table)
+* installing *source* package ‘gargle’ ...
+** package ‘gargle’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gargle)
+* installing *source* package ‘ids’ ...
+** package ‘ids’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ids)
+* installing *source* package ‘gtable’ ...
+** package ‘gtable’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gtable)
+* installing *source* package ‘isoband’ ...
+** package ‘isoband’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c clip-lines.cpp -o clip-lines.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.cpp -o init.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c isoband.cpp -o isoband.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c polygon.cpp -o polygon.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c separate-polygons.cpp -o separate-polygons.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c test-clip-lines.cpp -o test-clip-lines.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c test-runner.cpp -o test-runner.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Itestthat  -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c test-separate-polygons.cpp -o test-separate-polygons.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o isoband.so clip-lines.o init.o isoband.o polygon.o separate-polygons.o test-clip-lines.o test-runner.o test-separate-polygons.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-isoband/00new/isoband/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (isoband)
+* installing *source* package ‘cpp11’ ...
+** package ‘cpp11’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (cpp11)
+* installing *source* package ‘selectr’ ...
+** package ‘selectr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (selectr)
+* installing *source* package ‘forcats’ ...
+** package ‘forcats’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (forcats)
+* installing *source* package ‘hms’ ...
+** package ‘hms’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (hms)
+* installing *source* package ‘munsell’ ...
+** package ‘munsell’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (munsell)
+* installing *source* package ‘bit64’ ...
+** package ‘bit64’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c bsearch.c -o bsearch.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cache.c -o cache.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c hash64.c -o hash64.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.c -o init.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c integer64.c -o integer64.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c sort64.c -o sort64.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c sortuse64.c -o sortuse64.o
+gcc -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o bit64.so bsearch.o cache.o hash64.o init.o integer64.o sort64.o sortuse64.o -lm -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-bit64/00new/bit64/libs
+** R
+** data
+** exec
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (bit64)
+* installing *source* package ‘cellranger’ ...
+** package ‘cellranger’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (cellranger)
+* installing *source* package ‘tzdb’ ...
+** package ‘tzdb’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2  -c api.cpp -o api.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2  -c names.cpp -o names.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2  -c path.cpp -o path.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2  -c tz.cpp -o tz.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2  -c version.cpp -o version.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o tzdb.so api.o cpp11.o names.o path.o tz.o version.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-tzdb/00new/tzdb/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tzdb)
+* installing *source* package ‘progress’ ...
+** package ‘progress’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (progress)
+* installing *source* package ‘rmarkdown’ ...
+** package ‘rmarkdown’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rmarkdown)
+* installing *source* package ‘dplyr’ ...
+** package ‘dplyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c chop.cpp -o chop.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c filter.cpp -o filter.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c funs.cpp -o funs.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c group_by.cpp -o group_by.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c group_data.cpp -o group_data.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c imports.cpp -o imports.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.cpp -o init.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c mask.cpp -o mask.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c mutate.cpp -o mutate.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c slice.cpp -o slice.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG   -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c summarise.cpp -o summarise.o
+g++ -std=gnu++14 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o dplyr.so chop.o filter.o funs.o group_by.o group_data.o imports.o init.o mask.o mutate.o slice.o summarise.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-dplyr/00new/dplyr/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dplyr)
+* installing *source* package ‘googledrive’ ...
+** package ‘googledrive’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (googledrive)
+* installing *source* package ‘lubridate’ ...
+** package ‘lubridate’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_fixed.cc -o cctz/src/time_zone_fixed.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_if.cc -o cctz/src/time_zone_if.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_impl.cc -o cctz/src/time_zone_impl.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_info.cc -o cctz/src/time_zone_info.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_libc.cc -o cctz/src/time_zone_libc.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_lookup.cc -o cctz/src/time_zone_lookup.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/time_zone_posix.cc -o cctz/src/time_zone_posix.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cctz/src/zone_info_source.cc -o cctz/src/zone_info_source.o
+ar rcs libcctz.a ./cctz/src/time_zone_fixed.o ./cctz/src/time_zone_if.o ./cctz/src/time_zone_impl.o ./cctz/src/time_zone_info.o ./cctz/src/time_zone_libc.o ./cctz/src/time_zone_lookup.o ./cctz/src/time_zone_posix.o ./cctz/src/zone_info_source.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c update.cpp -o update.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c utils.c -o utils.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c datetime.c -o datetime.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c period.c -o period.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c tparse.c -o tparse.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o lubridate.so RcppExports.o update.o utils.o datetime.o period.o tparse.o -L. -lcctz -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-lubridate/00new/lubridate/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (lubridate)
+* installing *source* package ‘rvest’ ...
+** package ‘rvest’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rvest)
+* installing *source* package ‘scales’ ...
+** package ‘scales’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (scales)
+* installing *source* package ‘vroom’ ...
+** package ‘vroom’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c Iconv.cpp -o Iconv.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c LocaleInfo.cpp -o LocaleInfo.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c altrep.cc -o altrep.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c delimited_index.cc -o delimited_index.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c delimited_index_connection.cc -o delimited_index_connection.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c fixed_width_index_connection.cc -o fixed_width_index_connection.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c gen.cc -o gen.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c grisu3.c -o grisu3.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c guess_type.cc -o guess_type.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c iconv_file.cc -o iconv_file.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c index_collection.cc -o index_collection.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom.cc -o vroom.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_big_int.cc -o vroom_big_int.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_chr.cc -o vroom_chr.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_date.cc -o vroom_date.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_dbl.cc -o vroom_dbl.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_dttm.cc -o vroom_dttm.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_errors.cpp -o vroom_errors.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_fct.cc -o vroom_fct.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_fwf.cc -o vroom_fwf.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_int.cc -o vroom_int.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_num.cc -o vroom_num.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_rle.cc -o vroom_rle.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_time.cc -o vroom_time.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/progress/include' -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -fpic  -g -O2  -c vroom_write.cc -o vroom_write.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o vroom.so Iconv.o LocaleInfo.o altrep.o cpp11.o delimited_index.o delimited_index_connection.o fixed_width_index_connection.o gen.o grisu3.o guess_type.o iconv_file.o index_collection.o vroom.o vroom_big_int.o vroom_chr.o vroom_date.o vroom_dbl.o vroom_dttm.o vroom_errors.o vroom_fct.o vroom_fwf.o vroom_int.o vroom_num.o vroom_rle.o vroom_time.o vroom_write.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-vroom/00new/vroom/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (vroom)
+* installing *source* package ‘dbplyr’ ...
+** package ‘dbplyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dbplyr)
+* installing *source* package ‘dtplyr’ ...
+** package ‘dtplyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dtplyr)
+* installing *source* package ‘googlesheets4’ ...
+** package ‘googlesheets4’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (googlesheets4)
+* installing *source* package ‘readxl’ ...
+** package ‘readxl’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c XlsWorkBook.cpp -o XlsWorkBook.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c XlsWorkSheet.cpp -o XlsWorkSheet.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c XlsxWorkBook.cpp -o XlsxWorkBook.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c XlsxWorkSheet.cpp -o XlsxWorkSheet.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c cran.c -o cran.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c endian.c -o endian.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c ole.c -o ole.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c xls.c -o xls.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c xlstool.c -o xlstool.o
+g++ -std=gnu++14 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG -Iunix -I. -DRCPP_DEFAULT_INCLUDE_CALL=false -I'/home/u4/dwdetzi/R/library/progress/include' -I'/opt/ohpc/pub/apps/R/4.1.0/lib64/R/library/Rcpp/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -fvisibility=hidden -fpic  -g -O2  -c zip.cpp -o zip.o
+g++ -std=gnu++14 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o readxl.so RcppExports.o XlsWorkBook.o XlsWorkSheet.o XlsxWorkBook.o XlsxWorkSheet.o cran.o endian.o ole.o xls.o xlstool.o zip.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-readxl/00new/readxl/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (readxl)
+* installing *source* package ‘reprex’ ...
+** package ‘reprex’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (reprex)
+* installing *source* package ‘tidyr’ ...
+** package ‘tidyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c fill.cpp -o fill.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c melt.cpp -o melt.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c simplifyPieces.cpp -o simplifyPieces.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o tidyr.so cpp11.o fill.o melt.o simplifyPieces.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-tidyr/00new/tidyr/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tidyr)
+* installing *source* package ‘broom’ ...
+** package ‘broom’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (broom)
+* installing *source* package ‘ggplot2’ ...
+** package ‘ggplot2’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggplot2)
+* installing *source* package ‘readr’ ...
+** package ‘readr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Collector.cpp -o Collector.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c CollectorGuess.cpp -o CollectorGuess.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Iconv.cpp -o Iconv.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c LocaleInfo.cpp -o LocaleInfo.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Reader.cpp -o Reader.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Source.cpp -o Source.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c Tokenizer.cpp -o Tokenizer.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c TokenizerDelim.cpp -o TokenizerDelim.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c TokenizerFwf.cpp -o TokenizerFwf.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c TokenizerWs.cpp -o TokenizerWs.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c connection.cpp -o connection.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c datetime.cpp -o datetime.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c grisu3.c -o grisu3.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c init.c -o init.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c parse.cpp -o parse.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c read.cpp -o read.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c type_convert.cpp -o type_convert.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c write.cpp -o write.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I'/home/u4/dwdetzi/R/library/tzdb/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m   -fpic  -g -O2  -c write_delim.cpp -o write_delim.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o readr.so Collector.o CollectorGuess.o Iconv.o LocaleInfo.o Reader.o Source.o Tokenizer.o TokenizerDelim.o TokenizerFwf.o TokenizerWs.o connection.o cpp11.o datetime.o grisu3.o init.o parse.o read.o type_convert.o write.o write_delim.o -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-readr/00new/readr/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (readr)
+* installing *source* package ‘haven’ ...
+** package ‘haven’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c tagged_na.c -o tagged_na.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_parser.c -o readstat/readstat_parser.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_metadata.c -o readstat/readstat_metadata.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_io_unistd.c -o readstat/readstat_io_unistd.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_bits.c -o readstat/readstat_bits.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_variable.c -o readstat/readstat_variable.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_writer.c -o readstat/readstat_writer.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_error.c -o readstat/readstat_error.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_convert.c -o readstat/readstat_convert.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/CKHashTable.c -o readstat/CKHashTable.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_malloc.c -o readstat/readstat_malloc.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/readstat_value.c -o readstat/readstat_value.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_xport_write.c -o readstat/sas/readstat_xport_write.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_sas7bcat_read.c -o readstat/sas/readstat_sas7bcat_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_sas7bdat_write.c -o readstat/sas/readstat_sas7bdat_write.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_sas7bcat_write.c -o readstat/sas/readstat_sas7bcat_write.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/ieee.c -o readstat/sas/ieee.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_xport_read.c -o readstat/sas/readstat_xport_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_sas.c -o readstat/sas/readstat_sas.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_sas_rle.c -o readstat/sas/readstat_sas_rle.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_xport.c -o readstat/sas/readstat_xport.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/sas/readstat_sas7bdat_read.c -o readstat/sas/readstat_sas7bdat_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_spss_parse.c -o readstat/spss/readstat_spss_parse.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_sav_read.c -o readstat/spss/readstat_sav_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_por_read.c -o readstat/spss/readstat_por_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_sav.c -o readstat/spss/readstat_sav.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_por.c -o readstat/spss/readstat_por.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_sav_parse_timestamp.c -o readstat/spss/readstat_sav_parse_timestamp.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_zsav_read.c -o readstat/spss/readstat_zsav_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_sav_write.c -o readstat/spss/readstat_sav_write.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_zsav_compress.c -o readstat/spss/readstat_zsav_compress.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_por_write.c -o readstat/spss/readstat_por_write.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_spss.c -o readstat/spss/readstat_spss.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_zsav_write.c -o readstat/spss/readstat_zsav_write.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_sav_compress.c -o readstat/spss/readstat_sav_compress.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_sav_parse.c -o readstat/spss/readstat_sav_parse.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/spss/readstat_por_parse.c -o readstat/spss/readstat_por_parse.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/stata/readstat_dta_read.c -o readstat/stata/readstat_dta_read.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/stata/readstat_dta.c -o readstat/stata/readstat_dta.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/stata/readstat_dta_parse_timestamp.c -o readstat/stata/readstat_dta_parse_timestamp.o
+gcc -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c readstat/stata/readstat_dta_write.c -o readstat/stata/readstat_dta_write.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c DfReader.cpp -o DfReader.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c DfWriter.cpp -o DfWriter.o
+g++ -std=gnu++11 -I"/opt/ohpc/pub/apps/R/4.1.0/lib64/R/include" -DNDEBUG  -I'/home/u4/dwdetzi/R/library/cpp11/include' -I/opt/ohpc/pub/apps/python/3.6.5/include/python3.6m  -Ireadstat -DHAVE_ZLIB -fpic  -g -O2  -c haven_types.cpp -o haven_types.o
+g++ -std=gnu++11 -shared -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -L/opt/ohpc/pub/apps/python/3.6.5/lib -o haven.so tagged_na.o readstat/readstat_parser.o readstat/readstat_metadata.o readstat/readstat_io_unistd.o readstat/readstat_bits.o readstat/readstat_variable.o readstat/readstat_writer.o readstat/readstat_error.o readstat/readstat_convert.o readstat/CKHashTable.o readstat/readstat_malloc.o readstat/readstat_value.o readstat/sas/readstat_xport_write.o readstat/sas/readstat_sas7bcat_read.o readstat/sas/readstat_sas7bdat_write.o readstat/sas/readstat_sas7bcat_write.o readstat/sas/ieee.o readstat/sas/readstat_xport_read.o readstat/sas/readstat_sas.o readstat/sas/readstat_sas_rle.o readstat/sas/readstat_xport.o readstat/sas/readstat_sas7bdat_read.o readstat/spss/readstat_spss_parse.o readstat/spss/readstat_sav_read.o readstat/spss/readstat_por_read.o readstat/spss/readstat_sav.o readstat/spss/readstat_por.o readstat/spss/readstat_sav_parse_timestamp.o readstat/spss/readstat_zsav_read.o readstat/spss/readstat_sav_write.o readstat/spss/readstat_zsav_compress.o readstat/spss/readstat_por_write.o readstat/spss/readstat_spss.o readstat/spss/readstat_zsav_write.o readstat/spss/readstat_sav_compress.o readstat/spss/readstat_sav_parse.o readstat/spss/readstat_por_parse.o readstat/stata/readstat_dta_read.o readstat/stata/readstat_dta.o readstat/stata/readstat_dta_parse_timestamp.o readstat/stata/readstat_dta_write.o DfReader.o cpp11.o DfWriter.o haven_types.o -lz -L/opt/ohpc/pub/apps/R/4.1.0/lib64/R/lib -lR
+installing to /home/u4/dwdetzi/R/library/00LOCK-haven/00new/haven/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (haven)
+* installing *source* package ‘modelr’ ...
+** package ‘modelr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (modelr)
+* installing *source* package ‘tidyverse’ ...
+** package ‘tidyverse’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tidyverse)
+
+The downloaded source packages are in
+	‘/tmp/RtmpiWMZ18/downloaded_packages’
+> 
+> # Load Tidyverse
+> library(tidyverse)
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+✔ tibble  3.1.2     ✔ dplyr   1.0.7
+✔ tidyr   1.1.4     ✔ stringr 1.4.0
+✔ readr   2.0.2     ✔ forcats 0.5.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+> 
+> # Test Tidyverse
+> table1
+# A tibble: 6 x 4
+  country      year  cases population
+  <chr>       <int>  <int>      <int>
+1 Afghanistan  1999    745   19987071
+2 Afghanistan  2000   2666   20595360
+3 Brazil       1999  37737  172006362
+4 Brazil       2000  80488  174504898
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583
+> 
+> proc.time()
+   user  system elapsed 
+324.174  27.720 409.714 
